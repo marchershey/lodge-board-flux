@@ -1,15 +1,15 @@
-<x-layouts.base>
-    <div class="flex items-center justify-center h-full">
-        <div class="w-full max-w-md p-5">
-            <div class="flex flex-col space-y-5">
-                <div class="flex items-center justify-center space-x-2">
-                    <flux:icon.handshake class="size-6" />
-                    <flux:heading class="font-bold!" size="xl">LodgeBoard</flux:heading>
-                </div>
-                <div>
-                    {{ $slot }}
-                </div>
+<x-layouts.base title="{{ $title }}">
+
+    <div class="flex flex-col h-full p-10 space-y-10 overflow-auto">
+        <div class="flex-1">
+            <div class="flex flex-col items-center justify-center min-h-full space-y-10">
+                <x-logo />
+
+                {{ $slot }}
             </div>
+        </div>
+        <div>
+            <x-layouts.footer />
         </div>
     </div>
 </x-layouts.base>

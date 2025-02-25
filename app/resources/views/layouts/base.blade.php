@@ -1,3 +1,5 @@
+@props(['title'])
+
 <!DOCTYPE html>
 <html class="h-full overscroll-none scroll-smooth dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -10,7 +12,7 @@
     <link href="https://fonts.bunny.net" rel="preconnect">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800,900&display=swap" rel="stylesheet" />
 
-    <title>{{ $title ?? 'NO TITLE SET' . ' - ' . config('app.name') }}</title>
+    <title>{{ ($title ?? 'NO TITLE SET') . ' - ' . config('app.name') }}</title>
 </head>
 
 <body class="flex h-screen overflow-hidden">

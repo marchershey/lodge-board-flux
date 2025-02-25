@@ -5,7 +5,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 @theme {
     /** Custom Colors */
     --color-primary-light: var(--color-orange-500);
@@ -15,11 +14,11 @@
     --color-muted-dark: var(--color-gray-600);
     /** Layouts */
     --breakpoint-*: initial;
-    --breakpoint-phone: 480px;
-    --breakpoint-tablet: 640px;
+    --breakpoint-phone: 375px;
+    --breakpoint-tablet: 431px;
+    --breakpoint-landscape: 768px;
     --breakpoint-laptop: 1024px;
-    --breakpoint-desktop: 1280px;
-    --breakpoint-2k: 1440px;
+    --breakpoint-desktop: 1536px;
     /** Components */
     --default-card-bg-color: --alpha(var(--color-gray-800) / 40%);
     /** Flexbox & Grid */
@@ -28,7 +27,8 @@
     /** Typography */
     --default-text-color: var(--color-white);
     --default-font-size: 14px;
-    --default-font-family: "inter";
+    --default-font-family: "Inter";
+    --font-sans: Inter, sans-serif;
     /** Backgrounds */
     /** Borders */
     --default-border-color: --alpha(var(--color-gray-700) / 40%);
@@ -47,8 +47,16 @@
     /** Accessibility */
 }
 
+/* Needs to be imported before base and components */
+@import "./_utilities.css";
+
+@import "./_base.css" layer(base);
+@import "./_typography.css" layer(base);
+@import "./_layouts.css" layer(components);
+@import "./_components.css" layer(components);
 
 /** Flux Override */
+/* Re-assign Flux's gray of choice... */
 @theme {
     --color-zinc-50: var(--color-gray-50);
     --color-zinc-100: var(--color-gray-100);

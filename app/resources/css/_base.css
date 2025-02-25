@@ -1,0 +1,15 @@
+html {
+    font-size: var(--default-font-size);
+    font-family: var(--default-font-family);
+}
+body {
+    @apply h-full overflow-hidden bg-gray-950 bg-radial-[at_50%_25%] from-gray-800/80 to-gray-950/10;
+    /* color: var(--default-text-color); */
+    /*
+        List of different background gradiants from previous version
+        - from-gray-700/50 to-gray-950/10
+        - from-gray-700/50 to-gray-800/10
+        - from-gray-500/30 to-gray-800/30
+        - from-gray-400/20 to-gray-950/90
+    */
+}
