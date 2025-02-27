@@ -1,6 +1,6 @@
 <x-layouts.base title="{{ $title }}">
     <div class="h-full host">
-        <flux:sidebar class="border-r bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800" sticky stashable>
+        <flux:sidebar class="border-r border-gray-200 bg-gray-50 dark:bg-gray-900 dark:border-gray-700" sticky stashable>
             <flux:sidebar.toggle class="tablet:hidden" icon="x-mark" />
 
             <x-logo />
@@ -45,7 +45,7 @@
             </flux:radio.group>
         </flux:sidebar>
 
-        <flux:header class="block! bg-white dark:bg-gray-950 tablet:bg-zinc-50 tablet:dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+        <flux:header class="block! bg-white dark:bg-gray-950 tablet:bg-gray-50 tablet:dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
             <flux:navbar class="w-full tablet:hidden">
                 <flux:sidebar.toggle class="tablet:hidden" icon="bars-2" inset="left" />
 
@@ -75,7 +75,7 @@
             </flux:navbar>
         </flux:header>
 
-        <flux:main class="min-h-full overflow-y-auto">
+        <flux:main class="min-h-full overflow-y-auto bg-white dark:bg-gray-800">
 
             {{ $slot }}
 
