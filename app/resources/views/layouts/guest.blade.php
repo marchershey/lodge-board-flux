@@ -7,22 +7,9 @@
         </div>
 
         <flux:navbar class="-mb-px max-lg:hidden">
-            <flux:navbar.item href="#" icon="home" current>Home</flux:navbar.item>
-            <flux:navbar.item href="#" icon="inbox" badge="12">Inbox</flux:navbar.item>
+            <flux:navbar.item href="#" icon="home">Home</flux:navbar.item>
+            <flux:navbar.item href="#" icon="inbox" badge="12" badgeColor="red" variant="solid">Messages</flux:navbar.item>
             <flux:navbar.item href="#" icon="document-text">Documents</flux:navbar.item>
-            <flux:navbar.item href="#" icon="calendar">Calendar</flux:navbar.item>
-
-            <flux:separator class="my-2" vertical variant="subtle" />
-
-            <flux:dropdown class="max-lg:hidden">
-                <flux:navbar.item icon-trailing="chevron-down">Favorites</flux:navbar.item>
-
-                <flux:navmenu>
-                    <flux:navmenu.item href="#">Marketing site</flux:navmenu.item>
-                    <flux:navmenu.item href="#">Android app</flux:navmenu.item>
-                    <flux:navmenu.item href="#">Brand guidelines</flux:navmenu.item>
-                </flux:navmenu>
-            </flux:dropdown>
         </flux:navbar>
 
         <flux:spacer />
