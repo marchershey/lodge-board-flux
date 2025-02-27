@@ -1,9 +1,11 @@
-html {
+:root {
     font-size: var(--default-font-size);
     font-family: var(--default-font-family);
 }
+
 body {
-    @apply h-full overflow-hidden bg-gray-950 bg-radial-[at_50%_25%] from-gray-800/80 to-gray-950/10;
+    /* @apply h-full overflow-hidden bg-gray-100 dark:bg-zinc-800; */
+    @apply h-full overflow-hidden bg-zinc-100 dark:bg-zinc-950 dark:bg-radial-[at_50%_35%] dark:from-zinc-800 dark:to-zinc-950;
     /* color: var(--default-text-color); */
     /*
         List of different background gradiants from previous version

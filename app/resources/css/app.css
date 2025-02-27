@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "../../vendor/livewire/flux/dist/flux.css";
-@config "../../tailwind.config.js";
+/* @config "../../tailwind.config.js"; */
 @source "../views";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -10,8 +10,8 @@
     --color-primary-light: var(--color-orange-500);
     --color-primary: var(--color-orange-600);
     --color-primary-dark: var(--color-orange-800);
-    --color-muted: var(--color-gray-400);
-    --color-muted-dark: var(--color-gray-600);
+    --color-muted: var(--color-zinc-400);
+    --color-muted-dark: var(--color-zinc-600);
     /** Layouts */
     --breakpoint-phone: 375px;
     --breakpoint-tablet: 431px;
@@ -19,20 +19,21 @@
     --breakpoint-laptop: 1024px;
     --breakpoint-desktop: 1536px;
     /** Components */
-    --default-card-bg-color: --alpha(var(--color-gray-800) / 40%);
+    --default-card-bg-color: --alpha(var(--color-purple-800) / 40%);
     /** Flexbox & Grid */
     /** Spacing */
     /** Sizing */
     /** Typography */
+    --base-font-size: 9px;
     --default-text-color: var(--color-white);
-    --default-font-size: 14px;
-    --default-host-font-size: 16px;
+    --default-font-size: 16px;
+    --default-host-font-size: 70%;
     --default-font-family: "Inter";
     --font-sans: Inter, sans-serif;
     /** Backgrounds */
     /** Borders */
-    --default-border-color: --alpha(var(--color-gray-700) / 40%);
-    --default-border-hover-color: --alpha(var(--color-gray-700) / 40%);
+    --default-border-color: --alpha(var(--color-zinc-700) / 40%);
+    --default-border-hover-color: --alpha(var(--color-zinc-700) / 40%);
     --default-border-radius: var(--radius-xl);
     /** Effects */
     --default-shadow-size: var(--shadow-xl);
@@ -55,22 +56,22 @@
 @import "./_layouts.css" layer(components);
 @import "./_components.css" layer(components);
 
-/** Flux Override */
-/* Re-assign Flux's gray of choice... */
+/** Color Overrides */
 @theme {
-    --color-zinc-50: var(--color-gray-50);
-    --color-zinc-100: var(--color-gray-100);
-    --color-zinc-200: var(--color-gray-200);
-    --color-zinc-300: var(--color-gray-300);
-    --color-zinc-400: var(--color-gray-400);
-    --color-zinc-500: var(--color-gray-500);
-    --color-zinc-600: var(--color-gray-600);
-    --color-zinc-700: var(--color-gray-700);
-    --color-zinc-800: var(--color-gray-800);
-    --color-zinc-900: var(--color-gray-900);
-    --color-zinc-950: var(--color-gray-950);
+    --color-gray-50: var(--color-zinc-50);
+    --color-gray-100: var(--color-zinc-100);
+    --color-gray-200: var(--color-zinc-200);
+    --color-gray-300: var(--color-zinc-300);
+    --color-gray-400: var(--color-zinc-400);
+    --color-gray-500: var(--color-zinc-500);
+    --color-gray-600: var(--color-zinc-600);
+    --color-gray-700: var(--color-zinc-700);
+    --color-gray-800: var(--color-zinc-800);
+    --color-gray-900: var(--color-zinc-900);
+    --color-gray-950: var(--color-zinc-950);
 }
 
+/** Flux Theme */
 @theme {
     --color-accent: var(--color-sky-600);
     --color-accent-content: var(--color-sky-600);

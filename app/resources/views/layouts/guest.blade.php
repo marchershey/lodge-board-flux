@@ -2,7 +2,9 @@
     <flux:header class="border-b bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700" container>
         <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
-        <x-logo size="small" />
+        <div class="pr-6">
+            <x-logo size="sm" />
+        </div>
 
         <flux:navbar class="-mb-px max-lg:hidden">
             <flux:navbar.item href="#" icon="home" current>Home</flux:navbar.item>

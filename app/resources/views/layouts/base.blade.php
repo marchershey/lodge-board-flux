@@ -1,7 +1,7 @@
 @props(['title'])
 
 <!DOCTYPE html>
-<html class="h-full overscroll-none scroll-smooth dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-full overscroll-none scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -22,6 +22,21 @@
     <!-- Main Content -->
     <div class="w-full">
         {{ $slot }}
+    </div>
+
+    <div class="fixed top-0 flex justify-center w-full text-xs opacity-30">
+        <span class="block phone:hidden">null</span>
+        <span class="hidden phone:block tablet:hidden">phone</span>
+        <span class="hidden tablet:block landscape:hidden">tablet</span>
+        <span class="hidden landscape:block laptop:hidden">landscape</span>
+        <span class="hidden laptop:block desktop:hidden">laptop</span>
+        <span class="hidden desktop:block">desktop</span>
+        <span class="block sm:hidden">(xs)</span>
+        <span class="hidden sm:block md:hidden">(sm)</span>
+        <span class="hidden md:block lg:hidden">(md)</span>
+        <span class="hidden lg:block xl:hidden">(lg)</span>
+        <span class="hidden xl:block 2xl:hidden">(xl)</span>
+        <span class="hidden 2xl:block">(2xl)</span>
     </div>
 
     <!-- Livewire Script Config -->
