@@ -24,7 +24,7 @@
         {{ $slot }}
     </div>
 
-    <div class="fixed top-0 flex justify-center w-full text-xs opacity-30">
+    <div class="fixed top-0 z-50 flex justify-center w-full text-[9px] text-black opacity-30 dark:text-white">
         <span class="block phone:hidden">null</span>
         <span class="hidden phone:block tablet:hidden">phone</span>
         <span class="hidden tablet:block landscape:hidden">tablet</span>

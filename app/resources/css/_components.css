@@ -1,0 +1,4 @@
+/** Modal Backdrop */
+[data-flux-modal] > dialog::backdrop {
+    @apply bg-black/20! backdrop-blur;
+}

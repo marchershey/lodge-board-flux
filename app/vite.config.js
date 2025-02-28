@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
 
     return {
         server: {
+            cors: true,
             hmr: {
                 host: process.env.VITE_DEV_IP,
             },
