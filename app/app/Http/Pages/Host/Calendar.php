@@ -2,10 +2,10 @@
 
 namespace App\Http\Pages\Host;
 
-use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Layout('layouts.host', ['title' => 'Calendar'])]
+#[Title('Dashboard')]
 class Calendar extends Component
 {
     public function render()

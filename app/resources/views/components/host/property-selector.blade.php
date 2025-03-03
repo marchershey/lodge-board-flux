@@ -4,7 +4,6 @@
     <flux:menu class="">
         <flux:menu.radio.group>
             <flux:menu.radio checked>Ohana Burnside</flux:menu.radio>
-            <flux:menu.radio>Other Property</flux:menu.radio>
         </flux:menu.radio.group>
 
         <flux:menu.separator />

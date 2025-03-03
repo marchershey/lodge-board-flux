@@ -3,8 +3,12 @@
     font-family: var(--default-font-family);
 }
 
+* {
+    @apply transition-transform;
+}
+
 body {
-    @apply h-full overflow-hidden bg-gray-100 dark:bg-zinc-900;
+    @apply h-full overflow-hidden bg-gray-100 dark:bg-slate-900;
     /* @apply h-full overflow-hidden bg-zinc-100 dark:bg-zinc-950 dark:bg-radial-[at_50%_45%] dark:from-zinc-800 dark:to-zinc-900; */
     /* color: var(--default-text-color); */
     /*
