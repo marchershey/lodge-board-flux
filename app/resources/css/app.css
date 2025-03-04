@@ -57,32 +57,6 @@
 @import "./_components.css" layer(components);
 
 /** Color Overrides */
-/* @theme {
-    --color-gray-50: var(--color-zinc-50);
-    --color-gray-100: var(--color-zinc-100);
-    --color-gray-200: var(--color-zinc-200);
-    --color-gray-300: var(--color-zinc-300);
-    --color-gray-400: var(--color-zinc-400);
-    --color-gray-500: var(--color-zinc-500);
-    --color-gray-600: var(--color-zinc-600);
-    --color-gray-700: var(--color-zinc-700);
-    --color-gray-800: var(--color-zinc-800);
-    --color-gray-900: var(--color-zinc-900);
-    --color-gray-950: var(--color-zinc-950);
-} */
-@theme {
-    --color-gray-50: var(--color-slate-50);
-    --color-gray-100: var(--color-slate-100);
-    --color-gray-200: var(--color-slate-200);
-    --color-gray-300: var(--color-slate-300);
-    --color-gray-400: var(--color-slate-400);
-    --color-gray-500: var(--color-slate-500);
-    --color-gray-600: var(--color-slate-600);
-    --color-gray-700: var(--color-slate-700);
-    --color-gray-800: var(--color-slate-800);
-    --color-gray-900: var(--color-slate-900);
-    --color-gray-950: var(--color-slate-950);
-}
 @theme {
     --color-zinc-50: var(--color-slate-50);
     --color-zinc-100: var(--color-slate-100);
@@ -95,19 +69,28 @@
     --color-zinc-800: var(--color-slate-800);
     --color-zinc-900: var(--color-slate-900);
     --color-zinc-950: var(--color-slate-950);
-}
 
-/** Flux Theme */
-@theme {
-    --color-accent: var(--color-sky-600);
-    --color-accent-content: var(--color-sky-600);
+    --color-accent: var(--color-blue-500);
+    --color-accent-content: var(--color-blue-600);
     --color-accent-foreground: var(--color-white);
 }
 
 @layer theme {
     .dark {
-        --color-accent: var(--color-sky-600);
-        --color-accent-content: var(--color-sky-400);
+        --color-zinc-50: var(--color-gray-50);
+        --color-zinc-100: var(--color-gray-100);
+        --color-zinc-200: var(--color-gray-200);
+        --color-zinc-300: var(--color-gray-300);
+        --color-zinc-400: var(--color-gray-400);
+        --color-zinc-500: var(--color-gray-500);
+        --color-zinc-600: var(--color-gray-600);
+        --color-zinc-700: var(--color-gray-700);
+        --color-zinc-800: var(--color-gray-800);
+        --color-zinc-900: var(--color-gray-900);
+        --color-zinc-950: var(--color-gray-950);
+
+        --color-accent: var(--color-blue-500);
+        --color-accent-content: var(--color-blue-400);
         --color-accent-foreground: var(--color-white);
     }
 }

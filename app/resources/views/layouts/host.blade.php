@@ -3,7 +3,7 @@
     'subnav' => [],
 ])
 <div class="h-full host laptop:dark:bg-[#2f2f32]">
-    <flux:sidebar class="duration-200 dark:bg-gray-900 dark:border-white/10 bg-gray-50 laptop:bg-gray-100 border-r border-gray-300 laptop:border-0 laptop:dark:bg-[#2f2f32]" sticky stashable>
+    <flux:sidebar class="duration-200 dark:bg-gray-900 dark:border-white/10 bg-gray-50 border-r border-gray-300 laptop:border-0 laptop:dark:bg-transparent" sticky stashable>
 
         <flux:sidebar.toggle class="tablet:hidden" icon="x-mark" />
 
@@ -22,11 +22,11 @@
 
         <flux:spacer />
 
-        <livewire:components.host.property-selector />
+        <livewire:components.layouts.host.property-selector />
 
     </flux:sidebar>
 
-    <flux:header class="bg-white laptop:bg-gray-100 border-b border-gray-200 laptop:border-0 dark:bg-white/10 dark:border-white/10 laptop:dark:bg-[#2f2f32]">
+    <flux:header class="bg-white laptop:bg-gray-50 border-b border-gray-200 laptop:border-0 dark:bg-white/10 dark:border-white/10 laptop:dark:bg-gray-700">
         <div class="flex flex-wrap items-center w-full laptop:flex-nowrap">
             <div class="flex items-center justify-between w-full laptop:order-2 laptop:w-auto h-14">
                 <flux:sidebar.toggle class="laptop:hidden" icon="bars-2" inset="left" />
@@ -46,21 +46,7 @@
                             </flux:menu.radio.group>
                         </flux:menu>
                     </flux:context>
-                    <flux:dropdown class="-mr-4" position="top" align="end">
-                        <flux:profile avatar="https://fluxui.dev/img/demo/user.png" />
-                        <flux:menu>
-                            <flux:menu.group heading="Account">
-                                <flux:menu.item icon="user-cog">Profile</flux:menu.item>
-                            </flux:menu.group>
-
-                            <flux:menu.group heading="Get Help">
-                                <flux:menu.item icon="table-of-contents">FAQ</flux:menu.item>
-                                <flux:menu.item icon="info">Support</flux:menu.item>
-                            </flux:menu.group>
-
-                            <flux:menu.item variant="danger" icon="arrow-right-start-on-rectangle">Logout</flux:menu.item>
-                        </flux:menu>
-                    </flux:dropdown>
+                    <livewire:components.layouts.host.profile-dropdown />
                 </div>
             </div>
             <div class="px-6 -mx-6 overflow-x-auto laptop:w-full">
@@ -74,7 +60,7 @@
         </div>
     </flux:header>
 
-    <flux:main class="flex space-y-10 flex-col min-h-full overflow-y-auto laptop:bg-gray-50 laptop:border-t laptop:border-l laptop:rounded-tl-xl laptop:border-gray-200 laptop:dark:bg-[#18181b] laptop:dark:border-white/20">
+    <flux:main class="flex space-y-10 flex-col min-h-full overflow-y-auto laptop:bg-gray-100 laptop:border-t laptop:border-l laptop:rounded-tl-xl laptop:border-gray-200 laptop:dark:bg-gray-900 laptop:dark:border-white/20">
         <div {{ $attributes->merge(['class' => 'flex-1 w-full mx-auto max-w-4xl']) }}>
             {{ $slot }}
         </div>

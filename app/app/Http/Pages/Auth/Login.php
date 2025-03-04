@@ -2,10 +2,10 @@
 
 namespace App\Http\Pages\Auth;
 
-use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Layout('layouts.minimal', ['title' => 'Login'])]
+#[Title('Sign in')]
 class Login extends Component
 {
     public function render()
