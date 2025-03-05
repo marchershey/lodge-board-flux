@@ -8,14 +8,6 @@
 }
 
 body {
-    @apply h-full overflow-hidden bg-gray-100 dark:bg-gray-900;
-    /* @apply h-full overflow-hidden bg-zinc-100 dark:bg-zinc-950 dark:bg-radial-[at_50%_45%] dark:from-zinc-800 dark:to-zinc-900; */
-    /* color: var(--default-text-color); */
-    /*
-        List of different background gradiants from previous version
-        - from-gray-700/50 to-gray-950/10
-        - from-gray-700/50 to-gray-800/10
-        - from-gray-500/30 to-gray-800/30
-        - from-gray-400/20 to-gray-950/90
-    */
+    @apply h-full overflow-hidden bg-zinc-100 dark:bg-zinc-800;
+    /* @apply h-full overflow-hidden bg-zinc-100 dark:bg-zinc-950 dark:bg-radial-[at_50%_45%] dark:from-zinc-800/80; */
 }

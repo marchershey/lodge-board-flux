@@ -3,20 +3,21 @@
         <div class="text-center">
             <flux:heading size="lg">Create a new account</flux:heading>
         </div>
-        <flux:input type="email" placeholder="Enter your email address" />
-        <flux:button class="w-full" variant="primary">Sign up</flux:button>
-        <div class="text-center">
-            <flux:subheading>Or sign up with</flux:subheading>
-        </div>
-        {{-- <div class="flex flex-col space-y-4 tablet:flex-row tablet:space-y-0 tablet:space-x-2 tablet:justify-center"> --}}
         <div class="flex flex-col space-y-3">
-            <flux:button class="w-full" icon="google">Google</flux:button>
-            <flux:button class="w-full" icon="facebook">Facebook</flux:button>
-            <flux:button class="w-full" icon="apple">Apple</flux:button>
+            <flux:button class="w-full" icon="google">Sign up with Google</flux:button>
+            <flux:button class="w-full" icon="facebook">Sign up with Facebook</flux:button>
+            <flux:button class="w-full" icon="apple">Sign up with Apple</flux:button>
         </div>
+
         <flux:separator />
-        <div class="text-center text-xs flex justify-center space-x-5">
-            <flux:link href="{{ route('auth.login') }}">Already have an account? Sign in instead</flux:link>
+        <div class="text-center">
+            <flux:subheading>or use your email address</flux:subheading>
+        </div>
+        <flux:input type="email" placeholder="Enter your email address" />
+        <flux:button class="w-full" variant="primary">Create account</flux:button>
+        <div class="text-center text-xs">
+            <span>Already have an account?</span>
+            <flux:link href="{{ route('auth.login') }}">Sign in instead</flux:link>
         </div>
     </flux:card>
 </x-layouts.minimal>

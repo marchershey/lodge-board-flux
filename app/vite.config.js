@@ -12,7 +12,6 @@ export default defineConfig(({ mode }) => {
                 host: process.env.VITE_DEV_IP,
             },
         },
-
         plugins: [
             laravel({
                 input: ["resources/css/app.css", "resources/js/app.js"],

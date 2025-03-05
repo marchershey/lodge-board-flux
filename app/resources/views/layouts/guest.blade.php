@@ -1,5 +1,5 @@
 <x-layouts.base title="{{ $title }}">
-    <flux:header class="border-b border-white/10 bg-gray-100 dark:bg-[#2f2f32]" container>
+    <flux:header class="border-b border-white/10 bg-zinc-100 dark:bg-[#2f2f32]" container>
         <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
         <div class="pr-6 pl-3 laptop:pl-0 max-phone:hidden">
@@ -33,7 +33,7 @@
         </flux:dropdown>
     </flux:header>
 
-    <flux:sidebar class="border-r lg:hidden bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700" stashable sticky>
+    <flux:sidebar class="border-r lg:hidden bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700" stashable sticky>
         <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
         <x-logo />

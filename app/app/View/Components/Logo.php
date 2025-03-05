@@ -8,15 +8,12 @@ use Illuminate\View\Component;
 
 class Logo extends Component
 {
-    public $iconSize;
-    public $size;
     /**
      * Create a new component instance.
      */
-    public function __construct(string $iconSize = "size-6", string $size = null)
+    public function __construct()
     {
-        $this->iconSize = $iconSize;
-        $this->size = $size;
+        //
     }
 
     /**

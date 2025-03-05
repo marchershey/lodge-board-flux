@@ -6,7 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    @env('production')
+    @vite(['resources/css/app.css?' . Str::random(10), 'resources/js/app.js?' . Str::random(10)])
+@else
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @endenv
     @livewireStyles
     @fluxAppearance
     <link href="https://fonts.bunny.net" rel="preconnect">
@@ -15,7 +19,7 @@
     <title>{{ ($title ?? 'NO TITLE SET') . ' - ' . config('app.name') }}</title>
 </head>
 
-<body class="flex h-screen overflow-hidden">
+<body class="flex h-screen overflow-hidden @container">
     <!-- Toasts -->
     {{-- @livewire('toasts') --}}
 
@@ -24,7 +28,7 @@
         {{ $slot }}
     </div>
 
-    <div class="fixed top-0 z-50 flex justify-center w-full text-[9px] text-black opacity-30 dark:text-white">
+    <div class="fixed bottom-0 z-50 flex justify-center w-full text-[11px]">
         <span class="block phone:hidden">null</span>
         <span class="hidden phone:block tablet:hidden">phone</span>
         <span class="hidden tablet:block landscape:hidden">tablet</span>
