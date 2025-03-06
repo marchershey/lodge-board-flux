@@ -1,13 +1,15 @@
 <x-layouts.host :pageNav="[
     'Dashboard' => 'host.dashboard',
-    'Charts' => 'host.calendar',
+    'Calendar1' => 'host.calendar',
+    'Calendar2' => 'host.calendar',
+    'Calendar3' => 'host.calendar',
     'Inbox' => [
-        'route' => 'host.calendar',
+        'route' => 'host.settings',
         'badge' => '12',
     ],
 ]">
     <div class="flex flex-col space-y-10">
-        <flux:card class="w-full max-w-sm space-y-6 min-w-xs">
+        <flux:card class="min-w-xs w-full max-w-sm space-y-6">
             <div class="text-center">
                 <flux:heading size="lg">Sign in to continue</flux:heading>
             </div>
@@ -22,7 +24,7 @@
             </div>
             <flux:input type="email" placeholder="Enter your email address" />
             <flux:button class="w-full">Sign in</flux:button>
-            <div class="text-center text-xs flex justify-center space-x-5">
+            <div class="flex justify-center space-x-5 text-center text-xs">
                 <flux:link href="#">Can't sign in?</flux:link>
                 <flux:link href="{{ route('auth.register') }}">Create an account</flux:link>
             </div>

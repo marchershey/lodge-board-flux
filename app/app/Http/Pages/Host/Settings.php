@@ -10,6 +10,6 @@ class Settings extends Component
 {
     public function render()
     {
-        return view('pages.host.settings');
+            return view('pages.host.settings');
     }
 }
