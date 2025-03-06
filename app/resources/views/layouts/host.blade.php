@@ -1,6 +1,6 @@
 @props([
     'pageWidth' => null,
-    'subnav' => [],
+    'pageNav' => [],
 ])
 
 <div class="h-full host relative overflow-y-auto">
@@ -28,41 +28,7 @@
 
     </flux:sidebar>
 
-    <flux:header class="hidden">
-        <div class="flex flex-wrap items-center w-full laptop:flex-nowrap">
-            <div class="flex items-center justify-between w-full laptop:order-2 laptop:w-auto pt-4 laptop:pt-0">
-                <flux:sidebar.toggle class="laptop:hidden shrink-0" icon="bars-2" inset="left" />
-                <div class="flex-1 shrink truncate pl-1 laptop:hidden">
-                    <x-logo />
-                </div>
-                <div class="flex items-center space-x-3">
-                    <flux:context>
-                        <flux:tooltip content="Toggle dark mode" kbd="D">
-                            <flux:button aria-label="Toggle dark mode" x-on:keydown.d.window="if (document.activeElement.localName === 'body') { $flux.dark = ! $flux.dark }" x-data x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle" />
-                        </flux:tooltip>
-                        <flux:menu position="top" align="end">
-                            <flux:menu.radio.group x-model="$flux.appearance">
-                                <flux:menu.radio value="light">Light</flux:menu.radio>
-                                <flux:menu.radio value="dark">Dark</flux:menu.radio>
-                                <flux:menu.radio value="system">System</flux:menu.radio>
-                            </flux:menu.radio.group>
-                        </flux:menu>
-                    </flux:context>
-                    <livewire:components.layouts.host.profile-dropdown />
-                </div>
-            </div>
-            <div class="px-6 -mx-6 overflow-x-auto laptop:w-full">
-                <flux:navbar>
-                    <flux:navbar.item href="#" current>Dashboard</flux:navbar.item>
-                    <flux:navbar.item href="#" badge="32">Orders</flux:navbar.item>
-                    <flux:navbar.item href="#">Catalog</flux:navbar.item>
-                    <flux:navbar.item href="#">Configuration</flux:navbar.item>
-                </flux:navbar>
-            </div>
-        </div>
-    </flux:header>
-
-    <flux:header class="bg-white dark:bg-zinc-800 min-h-auto w-full laptop:sticky laptop:top-0 border-b border-zinc-200 dark:border-0">
+    <flux:header class="bg-white fixed dark:bg-zinc-800 min-h-auto w-full laptop:sticky laptop:top-0 border-b border-zinc-200 dark:border-0">
         <div class="w-full flex items-center flex-wrap laptop:flex-nowrap">
             <div class="flex items-center space-x-2 justify-between w-full laptop:w-auto laptop:order-2 min-h-[56px]">
                 <flux:sidebar.toggle class="laptop:hidden" icon="bars-2" inset="left" />
@@ -72,16 +38,30 @@
                 <x-theme-selector />
                 <livewire:components.layouts.host.profile-dropdown />
             </div>
-            <flux:navbar class="w-full">
-                <flux:navbar.item href="#" current>Dashboard</flux:navbar.item>
-                <flux:navbar.item href="#" badge="32">Orders</flux:navbar.item>
-                <flux:navbar.item href="#">Catalog</flux:navbar.item>
-                <flux:navbar.item href="#">Configuration</flux:navbar.item>
+
+            <flux:navbar>
+                @foreach ($pageNav as $title => $data)
+                    @php
+                        // If $data is an array, pull the 'link' and 'badge' values; otherwise, treat $data as the URL.
+                        $route = is_array($data) && isset($data['route']) ? $data['route'] : $data;
+                        $badge = is_array($data) && isset($data['badge']) ? $data['badge'] : null;
+                        $badgeColor = is_array($data) && isset($data['badgeColor']) ? $data['badgeColor'] : null;
+                        $badgeVariant = is_array($data) && isset($data['badgeVariant']) ? $data['badgeVariant'] : 'solid';
+                    @endphp
+                    <flux:navbar.item href="{{ route($route) }}" :current="request() - > routeIs($route)">
+                        <span>{{ $title }}</span>
+                        @if ($badge)
+                            <flux:badge class="px-1! py-0.5! rounded-sm! ml-2" size="sm" color="{{ $badgeColor }}" variant="{{ $badgeVariant }}">
+                                {{ $badge }}
+                            </flux:badge>
+                        @endif
+                    </flux:navbar.item>
+                @endforeach
             </flux:navbar>
         </div>
     </flux:header>
 
-    <flux:main class="bg-zinc-100 dark:bg-zinc-800 flex flex-col space-y-10">
+    <flux:main class="bg-zinc-100 dark:bg-zinc-800 flex flex-col space-y-10 mt-[112px]">
 
         <div class="flex-1">
             {{ $slot }}

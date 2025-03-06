@@ -1,5 +1,11 @@
-<x-layouts.host>
-
+<x-layouts.host :pageNav="[
+    'Dashboard' => 'host.dashboard',
+    'Charts' => 'host.calendar',
+    'Inbox' => [
+        'route' => 'host.calendar',
+        'badge' => '12',
+    ],
+]">
     <div class="flex flex-col space-y-10">
         <flux:card class="w-full max-w-sm space-y-6 min-w-xs">
             <div class="text-center">
@@ -27,12 +33,6 @@
                 <flux:subheading>Welcome back!</flux:subheading>
             </div>
         </flux:card>
-        {{-- <flux:card class="space-y-6">
-            <div>
-                <flux:heading size="lg">Dashboard</flux:heading>
-                <flux:subheading>Welcome back!</flux:subheading>
-            </div>
-        </flux:card>
         <flux:card class="space-y-6">
             <div>
                 <flux:heading size="lg">Dashboard</flux:heading>
@@ -98,7 +98,13 @@
                 <flux:heading size="lg">Dashboard</flux:heading>
                 <flux:subheading>Welcome back!</flux:subheading>
             </div>
-        </flux:card> --}}
+        </flux:card>
+        <flux:card class="space-y-6">
+            <div>
+                <flux:heading size="lg">Dashboard</flux:heading>
+                <flux:subheading>Welcome back!</flux:subheading>
+            </div>
+        </flux:card>
     </div>
 
 </x-layouts.host>
