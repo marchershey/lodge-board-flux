@@ -69,18 +69,7 @@
                 <div class="min-w-0 truncate flex-1 laptop:hidden">
                     <x-logo />
                 </div>
-                <flux:context>
-                    <flux:tooltip content="Toggle dark mode" kbd="D">
-                        <flux:button aria-label="Toggle dark mode" x-on:keydown.d.window="if (document.activeElement.localName === 'body') { $flux.dark = ! $flux.dark }" x-data x-on:click="$flux.dark = ! $flux.dark" icon="moon" variant="subtle" />
-                    </flux:tooltip>
-                    <flux:menu position="top" align="end">
-                        <flux:menu.radio.group x-model="$flux.appearance">
-                            <flux:menu.radio value="light">Light</flux:menu.radio>
-                            <flux:menu.radio value="dark">Dark</flux:menu.radio>
-                            <flux:menu.radio value="system">System</flux:menu.radio>
-                        </flux:menu.radio.group>
-                    </flux:menu>
-                </flux:context>
+                <x-theme-selector />
                 <livewire:components.layouts.host.profile-dropdown />
             </div>
             <flux:navbar class="w-full">

@@ -7,6 +7,6 @@
         </div>
     </div>
     <div>
-        <x-layouts.footer />
+        <x-layouts.footer showThemeSelector />
     </div>
 </div>
